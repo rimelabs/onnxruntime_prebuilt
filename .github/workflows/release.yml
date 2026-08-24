@@ -6,6 +6,8 @@ on:
 
 permissions:
   contents: write
+  id-token: write
+  attestations: write
 
 jobs:
   release:
@@ -22,3 +24,23 @@ jobs:
             "onnxruntime_prebuilt-${{ github.ref_name }}.tar.gz" \
             --title "${{ github.ref_name }}" \
             --notes-file release_notes.md
+
+  # Chained here rather than triggered on release publication: releases
+  # created with the workflow's own GITHUB_TOKEN do not emit events, so a
+  # release-triggered workflow would never run.
+  publish-to-bcr:
+    needs: release
+    uses: bazel-contrib/publish-to-bcr/.github/workflows/publish.yaml@v1.5.0
+    with:
+      tag_name: ${{ github.ref_name }}
+      registry_fork: ryanli/bazel-central-registry
+      # The release job does not produce attestations.
+      attest: false
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+    secrets:
+      # A classic personal access token with repo scope, able to push
+      # branches to the registry fork above.
+      publish_token: ${{ secrets.BCR_PUBLISH_TOKEN }}

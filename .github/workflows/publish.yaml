@@ -1,8 +1,10 @@
+# Manual re-run hook for BCR publication; the Release workflow publishes
+# automatically when a tag is pushed. (A `release: published` trigger would
+# never fire: the release is created with a workflow's GITHUB_TOKEN, which
+# does not emit events.)
 name: Publish to BCR
 
 on:
-  release:
-    types: [published]
   workflow_dispatch:
     inputs:
       tag_name:
@@ -19,7 +21,7 @@ jobs:
   publish:
     uses: bazel-contrib/publish-to-bcr/.github/workflows/publish.yaml@v1.5.0
     with:
-      tag_name: ${{ inputs.tag_name || github.event.release.tag_name }}
+      tag_name: ${{ inputs.tag_name }}
       registry_fork: ryanli/bazel-central-registry
       # The release workflow does not produce attestations.
       attest: false
