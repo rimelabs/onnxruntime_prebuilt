@@ -1,0 +1,24 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Build release archive and notes
+        run: .github/workflows/release_prep.sh "${{ github.ref_name }}" > release_notes.md
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ github.ref_name }}" \
+            "onnxruntime_prebuilt-${{ github.ref_name }}.tar.gz" \
+            --title "${{ github.ref_name }}" \
+            --notes-file release_notes.md

@@ -1,6 +1,6 @@
 module(
     name = "onnxruntime_prebuilt",
-    version = "0.1.0",
+    version = "0.1.1",
 )
 
 bazel_dep(name = "platforms", version = "1.1.0")
@@ -19,7 +19,7 @@ onnxruntime.download(
 use_repo(
     onnxruntime,
     "onnxruntime",
-    "onnxruntime-gpu",
     "onnxruntime-1.24.4-cpu",
     "onnxruntime-1.24.4-linux-x64-gpu_cuda13",
+    "onnxruntime-gpu",
 )

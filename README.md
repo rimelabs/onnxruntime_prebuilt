@@ -8,7 +8,7 @@ external repositories — both the CPU-only `onnxruntime` archives and the
 ## Usage
 
 ```starlark
-bazel_dep(name = "onnxruntime_prebuilt", version = "0.1.0")
+bazel_dep(name = "onnxruntime_prebuilt", version = "0.1.1")
 
 onnxruntime = use_extension("@onnxruntime_prebuilt//extensions:onnxruntime.bzl", "onnxruntime")
 onnxruntime.download(
@@ -83,3 +83,22 @@ bazel build @onnxruntime//... @onnxruntime-gpu//...
 
 The second command resolves the selectors for the host platform, downloads
 the chosen CPU and GPU archives, and builds every exposed target from them.
+The consumer-facing surface is exercised from the `e2e/` test module (the
+same one the Bazel Central Registry presubmit runs):
+
+```shell
+cd e2e && bazel build //:cpu_distribution //:gpu_distribution
+```
+
+## Releasing
+
+1. Bump `version` in MODULE.bazel (a PR; `main` requires one).
+2. Tag the release commit: `git tag vX.Y.Z && git push origin vX.Y.Z`.
+
+The Release workflow then creates the GitHub release with a stable source
+archive (`onnxruntime_prebuilt-vX.Y.Z.tar.gz`) and a usage snippet, and the
+Publish to BCR workflow opens a Bazel Central Registry pull request from the
+templates in `.bcr/`. The publish workflow needs a `BCR_PUBLISH_TOKEN`
+repository secret (a classic PAT that can push to the registry fork named in
+`.github/workflows/publish.yaml`); without it, dispatch the BCR pull request
+manually.
