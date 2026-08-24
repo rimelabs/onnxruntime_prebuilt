@@ -1,0 +1,19 @@
+module(
+    name = "onnxruntime_prebuilt",
+    version = "0.1.0",
+)
+
+bazel_dep(name = "rules_pkg", version = "1.2.0")
+
+bazel_dep(name = "rules_python", version = "1.9.2", dev_dependency = True)
+
+# Instantiate one version so the repository rule and BUILD template are
+# exercised by builds in this workspace; consumers request their own
+# versions through the same extension.
+onnxruntime = use_extension("//extensions:onnxruntime.bzl", "onnxruntime", dev_dependency = True)
+onnxruntime.download(version = "1.24.4")
+use_repo(
+    onnxruntime,
+    "onnxruntime-1.24.4-linux-x64-cpu",
+    "onnxruntime-1.24.4-linux-x64-gpu_cuda13",
+)

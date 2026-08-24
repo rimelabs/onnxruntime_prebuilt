@@ -1,0 +1,818 @@
+{
+  "1.22.1": {
+    "win-arm64": {
+      "cpu": {
+        "sha256": "3c984f25de07fdbbd2be36792dabfa18810c7483262238ea241ca5a1e52a4f82",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.22.1/onnxruntime-win-arm64-1.22.1.zip"
+      }
+    },
+    "win-x64": {
+      "cpu": {
+        "sha256": "855276cd4be3cda14fe636c69eb038d75bf5bcd552bda1193a5d79c51f436dfe",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.22.1/onnxruntime-win-x64-1.22.1.zip"
+      },
+      "gpu": {
+        "sha256": "4e6eeb8bfe4137cf98ccdc0b01f0400928bc3f8261b90e8e0d1c28410a33cac4",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.22.1/onnxruntime-win-x64-gpu-1.22.1.zip"
+      }
+    },
+    "win-x86": {
+      "cpu": {
+        "sha256": "da9fe96efacb0d1b9f4ae0b8f69f9694b6b3f673fc2a697c6b932679610ed292",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.22.1/onnxruntime-win-x86-1.22.1.zip"
+      }
+    }
+  },
+  "1.23.0": {
+    "linux-aarch64": {
+      "cpu": {
+        "sha256": "0b9f47d140411d938e47915824d8daaa424df95a88b5f1fc843172a75168f7a0",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.0/onnxruntime-linux-aarch64-1.23.0.tgz"
+      }
+    },
+    "linux-x64": {
+      "cpu": {
+        "sha256": "b6deea7f2e22c10c043019f294a0ea4d2a6c0ae52a009c34847640db75ec5580",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.0/onnxruntime-linux-x64-1.23.0.tgz"
+      },
+      "gpu": {
+        "sha256": "fc5d0e2dbdb893de11758da83523169761a70562dc0f6991f2cdb614f6a62c3d",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.0/onnxruntime-linux-x64-gpu-1.23.0.tgz"
+      }
+    },
+    "osx-arm64": {
+      "cpu": {
+        "sha256": "8182db0ebb5caa21036a3c78178f17fabb98a7916bdab454467c8f4cf34bcfdf",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.0/onnxruntime-osx-arm64-1.23.0.tgz"
+      }
+    },
+    "osx-universal2": {
+      "cpu": {
+        "sha256": "5e4365fb4a05aef353f6232b9a1848f37e608c421c9227e9224572205c0cfc08",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.0/onnxruntime-osx-universal2-1.23.0.tgz"
+      }
+    },
+    "osx-x86_64": {
+      "cpu": {
+        "sha256": "a8e43edcaa349cbfc51578a7fc61ea2b88793ccf077b4bc65aca58999d20cf0f",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.0/onnxruntime-osx-x86_64-1.23.0.tgz"
+      }
+    },
+    "win-arm64": {
+      "cpu": {
+        "sha256": "097352d00a398097db2db7a33ea015cf725cac5d5b95b48bf8eff0cd154d3621",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.0/onnxruntime-win-arm64-1.23.0.zip"
+      }
+    },
+    "win-x64": {
+      "cpu": {
+        "sha256": "72c23470310ec79a7d42d27fe9d257e6c98540c73fa5a1db1f67f538c6c16f2f",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.0/onnxruntime-win-x64-1.23.0.zip"
+      },
+      "gpu": {
+        "sha256": "ec423825a8782c0bbd5cbfabcd984363fbb99ff084afae128719690d4db7f8d5",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.0/onnxruntime-win-x64-gpu-1.23.0.zip"
+      }
+    }
+  },
+  "1.23.1": {
+    "linux-aarch64": {
+      "cpu": {
+        "sha256": "263267fa063c1a86d755268f492eabbc62887542c4a9417a21d628219805061a",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.1/onnxruntime-linux-aarch64-1.23.1.tgz"
+      }
+    },
+    "linux-x64": {
+      "cpu": {
+        "sha256": "ddb1f137cd9c662df971ae84f05f5873f0181bac9fdd99b1ea4d60362be72cb3",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.1/onnxruntime-linux-x64-1.23.1.tgz"
+      },
+      "gpu": {
+        "sha256": "d759646b084888ded846f3be36aaadea24b62a19accba2d64ff9c2e3fb714a62",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.1/onnxruntime-linux-x64-gpu-1.23.1.tgz"
+      }
+    },
+    "osx-arm64": {
+      "cpu": {
+        "sha256": "24b9d8ad4b45e481d36cd24f766d4f257834dd0254d168c11c5cb8103b2ab7b6",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.1/onnxruntime-osx-arm64-1.23.1.tgz"
+      }
+    },
+    "osx-universal2": {
+      "cpu": {
+        "sha256": "e9fcd200bcf69377cc2c15e529368ca840d625669f34b1cf296a56b175665fc2",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.1/onnxruntime-osx-universal2-1.23.1.tgz"
+      }
+    },
+    "osx-x86_64": {
+      "cpu": {
+        "sha256": "06a105c0936accea5ad26ef9b835d3cfb76387e98075c652219d479362ab5ab9",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.1/onnxruntime-osx-x86_64-1.23.1.tgz"
+      }
+    },
+    "win-arm64": {
+      "cpu": {
+        "sha256": "1890c8b84791d796c49c4a615d0b746c0272fcca64da6be03d03952c2c1a495e",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.1/onnxruntime-win-arm64-1.23.1.zip"
+      }
+    },
+    "win-x64": {
+      "cpu": {
+        "sha256": "d57817ee1e1aec8a7b4973ded0536f9be19ce0aa2152ff06a07952ed44790ed7",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.1/onnxruntime-win-x64-1.23.1.zip"
+      },
+      "gpu": {
+        "sha256": "a2dd7aed365213d0187a653b0462bf9824d71ab2f76ea0c6df507e2a8036ca53",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.1/onnxruntime-win-x64-gpu-1.23.1.zip"
+      }
+    }
+  },
+  "1.23.2": {
+    "linux-aarch64": {
+      "cpu": {
+        "sha256": "7c63c73560ed76b1fac6cff8204ffe34fe180e70d6582b5332ec094810241e5c",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.2/onnxruntime-linux-aarch64-1.23.2.tgz"
+      }
+    },
+    "linux-x64": {
+      "cpu": {
+        "sha256": "1fa4dcaef22f6f7d5cd81b28c2800414350c10116f5fdd46a2160082551c5f9b",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.2/onnxruntime-linux-x64-1.23.2.tgz"
+      },
+      "gpu": {
+        "sha256": "2083e361072a79ce16a90dcd5f5cb3ab92574a82a3ce0ac01e5cfa3158176f53",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.2/onnxruntime-linux-x64-gpu-1.23.2.tgz"
+      }
+    },
+    "osx-arm64": {
+      "cpu": {
+        "sha256": "b4d513ab2b26f088c66891dbbc1408166708773d7cc4163de7bdca0e9bbb7856",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.2/onnxruntime-osx-arm64-1.23.2.tgz"
+      }
+    },
+    "osx-universal2": {
+      "cpu": {
+        "sha256": "49ae8e3a66ccb18d98ad3fe7f5906b6d7887df8a5edd40f49eb2b14e20885809",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.2/onnxruntime-osx-universal2-1.23.2.tgz"
+      }
+    },
+    "osx-x86_64": {
+      "cpu": {
+        "sha256": "d10359e16347b57d9959f7e80a225a5b4a66ed7d7e007274a15cae86836485a6",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.2/onnxruntime-osx-x86_64-1.23.2.tgz"
+      }
+    },
+    "win-arm64": {
+      "cpu": {
+        "sha256": "1cfe88b6435df3b5fb0e9f6bd7d6f5df1e887b6174de7f6e2a47bab956f3f168",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.2/onnxruntime-win-arm64-1.23.2.zip"
+      }
+    },
+    "win-x64": {
+      "cpu": {
+        "sha256": "0b38df9af21834e41e73d602d90db5cb06dbd1ca618948b8f1d66d607ac9f3cd",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.2/onnxruntime-win-x64-1.23.2.zip"
+      },
+      "gpu": {
+        "sha256": "e77afdbbc2b8cb6da4e5a50d89841b48c44f3e47dce4fb87b15a2743786d0bb9",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.23.2/onnxruntime-win-x64-gpu-1.23.2.zip"
+      }
+    }
+  },
+  "1.24.1": {
+    "linux-aarch64": {
+      "cpu": {
+        "sha256": "0f56edd68f7602df790b68b874a46b115add037e88385c6c842bb763b39b9f89",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.1/onnxruntime-linux-aarch64-1.24.1.tgz"
+      }
+    },
+    "linux-x64": {
+      "cpu": {
+        "sha256": "9142552248b735920f9390027e4512a2cacf8946a1ffcbe9071a5c210531026f",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.1/onnxruntime-linux-x64-1.24.1.tgz"
+      },
+      "gpu": {
+        "sha256": "1c468821456b7863640555e31ee5b71e56bb959874b9db0dbf79503997993673",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.1/onnxruntime-linux-x64-gpu-1.24.1.tgz"
+      },
+      "gpu_cuda13": {
+        "sha256": "30aaf9b1046aab7ed976dca09ca64c11da5385871a0d2b9aa00e2817f2416f1e",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.1/onnxruntime-linux-x64-gpu_cuda13-1.24.1.tgz"
+      }
+    },
+    "osx-arm64": {
+      "cpu": {
+        "sha256": "c2969315cd9ce0f5fa04f6b53ff72cb92f87f7dcf38e88cacfa40c8f983fbba9",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.1/onnxruntime-osx-arm64-1.24.1.tgz"
+      }
+    },
+    "win-arm64": {
+      "cpu": {
+        "sha256": "661e9b6dab79fbf1a9c39f2b6a06bf1393ab004fe97be3b2de3188671db304e2",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.1/onnxruntime-win-arm64-1.24.1.zip"
+      }
+    },
+    "win-x64": {
+      "cpu": {
+        "sha256": "c72736c16442cad417ee4f45e3e2fbd10778e70a0fc1cb0e86f028d766e525af",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.1/onnxruntime-win-x64-1.24.1.zip"
+      },
+      "gpu": {
+        "sha256": "176af2aade9eb9e429cd2a738aa5d71a1f20ec7123e4b99a382ad62b9db970fb",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.1/onnxruntime-win-x64-gpu-1.24.1.zip"
+      },
+      "gpu_cuda13": {
+        "sha256": "8bb669e88d983979bf9cecb4712ef8b3125a50471d582bfa00742e31009db7d5",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.1/onnxruntime-win-x64-gpu_cuda13-1.24.1.zip"
+      }
+    }
+  },
+  "1.24.2": {
+    "linux-aarch64": {
+      "cpu": {
+        "sha256": "6715b3d19965a2a6981e78ed4ba24f17a8c30d2d26420dbed10aac7ceca0085e",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.2/onnxruntime-linux-aarch64-1.24.2.tgz"
+      }
+    },
+    "linux-x64": {
+      "cpu": {
+        "sha256": "43725474ba5663642e17684717946693850e2005efbd724ac72da278fead25e6",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.2/onnxruntime-linux-x64-1.24.2.tgz"
+      },
+      "gpu": {
+        "sha256": "bcb42da041f42192e5579de175f7410313c114740a611e230afe9d79be65cc49",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.2/onnxruntime-linux-x64-gpu-1.24.2.tgz"
+      },
+      "gpu_cuda13": {
+        "sha256": "75128942ac9b22fb5001f1e1e041b473793958db016cd124a2ad981fe273ae12",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.2/onnxruntime-linux-x64-gpu_cuda13-1.24.2.tgz"
+      }
+    },
+    "osx-arm64": {
+      "cpu": {
+        "sha256": "0af4fa503e8ea285245b47ee42d0a7461b8156a81270857da0c1d4ecf858abde",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.2/onnxruntime-osx-arm64-1.24.2.tgz"
+      }
+    },
+    "win-arm64": {
+      "cpu": {
+        "sha256": "dd8180d98e5a0ead7ead99029acc80b86a8b905b9aba4cc978e388039bb5823b",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.2/onnxruntime-win-arm64-1.24.2.zip"
+      }
+    },
+    "win-x64": {
+      "cpu": {
+        "sha256": "8e3e9c826375352e29cb2614fe44f3d7a4b0ff7b8028ad7a456af9d949a7e8b0",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.2/onnxruntime-win-x64-1.24.2.zip"
+      },
+      "gpu": {
+        "sha256": "4152b67ea67405cf642fdc484a4e24fb1d9bfda7a78dfd5f756c73812a40bdcd",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.2/onnxruntime-win-x64-gpu-1.24.2.zip"
+      },
+      "gpu_cuda13": {
+        "sha256": "72207a283ec9886e1968a4183636a7665c78e2154d4f4adc16e61193dd7a74f1",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.2/onnxruntime-win-x64-gpu_cuda13-1.24.2.zip"
+      }
+    }
+  },
+  "1.24.3": {
+    "linux-aarch64": {
+      "cpu": {
+        "sha256": "15100fb88b4c692cdd6bf2cca5f4a26a3806cebca8136de6681e2aba4b2ea033",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.3/onnxruntime-linux-aarch64-1.24.3.tgz"
+      }
+    },
+    "linux-x64": {
+      "cpu": {
+        "sha256": "4c436a280d650f8bf32c921a2bf4de7c42cc32884c51c90e47de991708bbb5a4",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.3/onnxruntime-linux-x64-1.24.3.tgz"
+      },
+      "gpu": {
+        "sha256": "87c1cb812688c8f267bf2e3eba6ce6e174df97a323ba2c3c1d59a0a0f9ee140b",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.3/onnxruntime-linux-x64-gpu-1.24.3.tgz"
+      },
+      "gpu_cuda13": {
+        "sha256": "55675c48932330df2c703fd02bb968efeb698130fb9340d1bfee8efb841b1c3c",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.3/onnxruntime-linux-x64-gpu_cuda13-1.24.3.tgz"
+      }
+    },
+    "osx-arm64": {
+      "cpu": {
+        "sha256": "c255663d40755f84b1b86373bdb9870bb65f3a2c3d779b3d7ae31aaa00cebb4f",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.3/onnxruntime-osx-arm64-1.24.3.tgz"
+      }
+    },
+    "win-arm64": {
+      "cpu": {
+        "sha256": "0b9ee92bcd1f82f684b574cb413f27595e0d2f7b96ec6d02b30301f45ad313b0",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.3/onnxruntime-win-arm64-1.24.3.zip"
+      }
+    },
+    "win-arm64x": {
+      "cpu": {
+        "sha256": "50e7719be1ac2d48594d1e0e1927915bafd919a47a3417628674743198856fd5",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.3/onnxruntime-win-arm64x-1.24.3.zip"
+      }
+    },
+    "win-x64": {
+      "cpu": {
+        "sha256": "4fbfb85d0e9de9bb6fb8a9866a7cb477cbad404d889b236931bf3f5d547e5f48",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.3/onnxruntime-win-x64-1.24.3.zip"
+      },
+      "gpu": {
+        "sha256": "f2af33fea71f477027961b8027e7496ab01c6b962ae4f596bf8163192b03b326",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.3/onnxruntime-win-x64-gpu-1.24.3.zip"
+      },
+      "gpu_cuda13": {
+        "sha256": "476b1fd397e76a8e62f409d3583e690b4a47be8df8c73bab4351bc36572e07e4",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.3/onnxruntime-win-x64-gpu_cuda13-1.24.3.zip"
+      }
+    }
+  },
+  "1.24.4": {
+    "linux-aarch64": {
+      "cpu": {
+        "sha256": "866109a9248d057671a039b9d725be4bd86888e3754140e6701ec621be9d4d7e",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.4/onnxruntime-linux-aarch64-1.24.4.tgz"
+      }
+    },
+    "linux-x64": {
+      "cpu": {
+        "sha256": "3a211fbea252c1e66290658f1b735b772056149f28321e71c308942cdb54b747",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.4/onnxruntime-linux-x64-1.24.4.tgz"
+      },
+      "gpu": {
+        "sha256": "c5f804ff5d239b436fa59e9f2fb288a39f7eb9552f6a636c8b71e792e91a8808",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.4/onnxruntime-linux-x64-gpu-1.24.4.tgz"
+      },
+      "gpu_cuda13": {
+        "sha256": "fdc6eb18317b4eaeda8b3b86595e5da7e853f72bac67ccac9b04ffc20c9f7fe0",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.4/onnxruntime-linux-x64-gpu_cuda13-1.24.4.tgz"
+      }
+    },
+    "osx-arm64": {
+      "cpu": {
+        "sha256": "93787795f47e1eee369182e43ed51b9e5da0878ab0346aecf4258979b8bba989",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.4/onnxruntime-osx-arm64-1.24.4.tgz"
+      }
+    },
+    "win-arm64": {
+      "cpu": {
+        "sha256": "47dc80aa39da792271af10be5993919536a4dab0965ec1e6043ef37f1df7a693",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.4/onnxruntime-win-arm64-1.24.4.zip"
+      }
+    },
+    "win-arm64x": {
+      "cpu": {
+        "sha256": "a6b759ee1cdb80fb6024b96fea8d8c9cf2622cd1b13befede240c629798fa4c9",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.4/onnxruntime-win-arm64x-1.24.4.zip"
+      }
+    },
+    "win-x64": {
+      "cpu": {
+        "sha256": "d2319fddfb6ea4db99ccc4b60c85c517bcd855721f5daa6a06d40d7cb2ee2357",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.4/onnxruntime-win-x64-1.24.4.zip"
+      },
+      "gpu": {
+        "sha256": "ef3337a0b8184eb8beec310f7c83bd50376b3eefc43aab84ac8e452f6987df0a",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.4/onnxruntime-win-x64-gpu-1.24.4.zip"
+      },
+      "gpu_cuda13": {
+        "sha256": "971be8cf984950672934a3173669590a8ece10b44746883420da8066ba836707",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.4/onnxruntime-win-x64-gpu_cuda13-1.24.4.zip"
+      }
+    }
+  },
+  "1.25.0": {
+    "linux-aarch64": {
+      "cpu": {
+        "sha256": "849c04634e76446bbe0a92f67955a9641415c37f11930804066057bf9eadbd03",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.25.0/onnxruntime-linux-aarch64-1.25.0.tgz"
+      }
+    },
+    "linux-x64": {
+      "cpu": {
+        "sha256": "e0a8998e70416801f9a634a8ea1d369a255ff109741469f9d99cf369a46a1492",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.25.0/onnxruntime-linux-x64-1.25.0.tgz"
+      },
+      "gpu": {
+        "sha256": "630d1c292a8e530425bc4047598ce30acece2c4b5b5f4f46b676212302c38d93",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.25.0/onnxruntime-linux-x64-gpu-1.25.0.tgz"
+      },
+      "gpu_cuda13": {
+        "sha256": "e525c53952b1e7bfc9c0d284a492d1b5da9416a6ae0ab372df461a0abc1ffb92",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.25.0/onnxruntime-linux-x64-gpu_cuda13-1.25.0.tgz"
+      }
+    },
+    "osx-arm64": {
+      "cpu": {
+        "sha256": "65405dc8793c86cadb98b5e07f6d3bdde84f8300f1b030d4736b41c17610d6c1",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.25.0/onnxruntime-osx-arm64-1.25.0.tgz"
+      }
+    },
+    "win-arm64": {
+      "cpu": {
+        "sha256": "0de0ae423cf70800ccb8aaabcf71ece982547e1ddd8415302a873f055a596821",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.25.0/onnxruntime-win-arm64-1.25.0.zip"
+      }
+    },
+    "win-arm64x": {
+      "cpu": {
+        "sha256": "b2a537185f1a0ee1b366045380942a541166c6a5a9c9b70ff0eba7c7b2d3f900",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.25.0/onnxruntime-win-arm64x-1.25.0.zip"
+      }
+    },
+    "win-x64": {
+      "cpu": {
+        "sha256": "da753f762bf2400e7191ec594086b186a7051d5af8dc886f6e2020c2403df738",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.25.0/onnxruntime-win-x64-1.25.0.zip"
+      },
+      "gpu": {
+        "sha256": "125c9fe408f41b9ae1ad7138dac5ebb19a85e65438d1e368d21b50e6abb32f4e",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.25.0/onnxruntime-win-x64-gpu-1.25.0.zip"
+      },
+      "gpu_cuda13": {
+        "sha256": "b3408e09e2d5deb12dd676000f57e8403507cdd4608048c60260d0170908cd82",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.25.0/onnxruntime-win-x64-gpu_cuda13-1.25.0.zip"
+      }
+    }
+  },
+  "1.25.1": {
+    "linux-aarch64": {
+      "cpu": {
+        "sha256": "daa71b56b00c4ab34798a3d96ca41a32ece4d3e302dc2386d3cca83fd4491214",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.25.1/onnxruntime-linux-aarch64-1.25.1.tgz"
+      }
+    },
+    "linux-x64": {
+      "cpu": {
+        "sha256": "eb566a49cfc49ef0642f809b69340b5bb656c7c4905ba873526d226f2c005816",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.25.1/onnxruntime-linux-x64-1.25.1.tgz"
+      },
+      "gpu": {
+        "sha256": "ddfc4ca4ccc9cd5345d3820edab710ee84e749569d052eed92c42693d3b448a8",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.25.1/onnxruntime-linux-x64-gpu-1.25.1.tgz"
+      },
+      "gpu_cuda13": {
+        "sha256": "ebc14e1290db2a30a7bb415bd1c3e1390a7816bb4db87677dc36d071ed22833c",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.25.1/onnxruntime-linux-x64-gpu_cuda13-1.25.1.tgz"
+      }
+    },
+    "osx-arm64": {
+      "cpu": {
+        "sha256": "18987ec3187b5f29ba798109750f6135060560ad4e0a52678fcc753ee8fb3091",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.25.1/onnxruntime-osx-arm64-1.25.1.tgz"
+      }
+    },
+    "win-arm64": {
+      "cpu": {
+        "sha256": "57d36a7b7607967cc1e7d758b2104ebdcfac19e2bb3aa8683914dfeeff75f068",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.25.1/onnxruntime-win-arm64-1.25.1.zip"
+      }
+    },
+    "win-arm64x": {
+      "cpu": {
+        "sha256": "fce65db40c3ee4711bc67be5fd6d129bfe992e49e24401f2725fb9bbebe69753",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.25.1/onnxruntime-win-arm64x-1.25.1.zip"
+      }
+    },
+    "win-x64": {
+      "cpu": {
+        "sha256": "33f2e8a63774811f99a5fc224cac32f4eed8c27643d46c6cc685319fa8f18019",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.25.1/onnxruntime-win-x64-1.25.1.zip"
+      },
+      "gpu": {
+        "sha256": "e72bc4895f84400368382d7b7287c018eabbb2be384e67446f3ab64af7fe5552",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.25.1/onnxruntime-win-x64-gpu-1.25.1.zip"
+      },
+      "gpu_cuda13": {
+        "sha256": "d54b465e5f9300d8928c43772751ac95c123ebd90069a0a4b8ce02e503335469",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.25.1/onnxruntime-win-x64-gpu_cuda13-1.25.1.zip"
+      }
+    }
+  },
+  "1.26.0": {
+    "linux-aarch64": {
+      "cpu": {
+        "sha256": "34ff1c2d0f12e2cf3d33a0c5f82e39792e1d581fbd6968fd7c30d173654be01a",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.26.0/onnxruntime-linux-aarch64-1.26.0.tgz"
+      }
+    },
+    "linux-x64": {
+      "cpu": {
+        "sha256": "1254da24fb389cf39dc0ff3451ab48301740ffbfcbaf646849df92f80ee92c57",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.26.0/onnxruntime-linux-x64-1.26.0.tgz"
+      },
+      "gpu": {
+        "sha256": "cb7df7ee2ca0f962c7ce7c839aeae36223d146a91fb4646d62fb0046f297479f",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.26.0/onnxruntime-linux-x64-gpu-1.26.0.tgz"
+      },
+      "gpu_cuda13": {
+        "sha256": "aa619d5701bbe58046cc998b21e692d5b2aefac1479f375c4b988526cb80befa",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.26.0/onnxruntime-linux-x64-gpu_cuda13-1.26.0.tgz"
+      }
+    },
+    "osx-arm64": {
+      "cpu": {
+        "sha256": "7a1280bbb1701ea514f71828765237e7896e0f2e1cd332f1f70dbd5c3e33aca3",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.26.0/onnxruntime-osx-arm64-1.26.0.tgz"
+      }
+    },
+    "win-arm64": {
+      "cpu": {
+        "sha256": "852e89621fb752b261821dda131042ed7c7fa18d8bb06768bd4eb7fa7086d87f",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.26.0/onnxruntime-win-arm64-1.26.0.zip"
+      }
+    },
+    "win-arm64x": {
+      "cpu": {
+        "sha256": "8bb9c9335a044e7a4a773b9cf69153cb9cc031082e423bb4f9e7d0d4986bdc37",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.26.0/onnxruntime-win-arm64x-1.26.0.zip"
+      }
+    },
+    "win-x64": {
+      "cpu": {
+        "sha256": "6ebe99b5564bf4d029b6e93eac9ff423682b6212eade769e9ca3f685eaf500b4",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.26.0/onnxruntime-win-x64-1.26.0.zip"
+      },
+      "gpu": {
+        "sha256": "1133b1bcb0fb6f82b1c5b470b7cc15f9080a58b27dbc7b579a1fd63125ec2a15",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.26.0/onnxruntime-win-x64-gpu-1.26.0.zip"
+      },
+      "gpu_cuda13": {
+        "sha256": "4fa096030ee766b2e590d71fb6676bbd00595c92ab87acf497fe075e98834d8b",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.26.0/onnxruntime-win-x64-gpu_cuda13-1.26.0.zip"
+      }
+    }
+  },
+  "1.27.0": {
+    "linux-aarch64": {
+      "cpu": {
+        "sha256": "3e4d83ac06924a32a07b6d7f91ce6f852876153fc0bbdf931bf517a140bfbe48",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.27.0/onnxruntime-linux-aarch64-1.27.0.tgz"
+      }
+    },
+    "linux-x64": {
+      "cpu": {
+        "sha256": "547e40a48f1fe73e3f812d7c88a948612c23f896b91e4e2ee1e232d7b468246f",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.27.0/onnxruntime-linux-x64-1.27.0.tgz"
+      },
+      "gpu_cuda12": {
+        "sha256": "3fed2d2f45f01f8bc1c1597a31afe29efd692c7ea4648d58e1844a8a0d0a48cb",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.27.0/onnxruntime-linux-x64-gpu_cuda12-1.27.0.tgz"
+      },
+      "gpu_cuda13": {
+        "sha256": "1a3227e1dc2f53d9f877c93278af500b15e26d99aa5ade877692138b3ab7d351",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.27.0/onnxruntime-linux-x64-gpu_cuda13-1.27.0.tgz"
+      }
+    },
+    "osx-arm64": {
+      "cpu": {
+        "sha256": "545e81c58152353acb0d1e8bd6ce4b62f830c0961f5b3acfedc790ffd76e477a",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.27.0/onnxruntime-osx-arm64-1.27.0.tgz"
+      }
+    },
+    "win-arm64": {
+      "cpu": {
+        "sha256": "a32f2650575b3c20df462e337519fd1cc4105356130d11dba9771c6f374d952f",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.27.0/onnxruntime-win-arm64-1.27.0.zip"
+      }
+    },
+    "win-arm64x": {
+      "cpu": {
+        "sha256": "e97902e22116734909a1e93c61d56e0d3c8b22ea7541f3f66cffbca702c6a674",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.27.0/onnxruntime-win-arm64x-1.27.0.zip"
+      }
+    },
+    "win-x64": {
+      "cpu": {
+        "sha256": "c5c81710938e68079ff1a192b04897faabe4b43830d48f39f27ecd4e16138bfc",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.27.0/onnxruntime-win-x64-1.27.0.zip"
+      },
+      "gpu_cuda12": {
+        "sha256": "5174869c00f2f8c2ece31fe431821ac38773296f57962fec49dbb14ad5faca97",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.27.0/onnxruntime-win-x64-gpu_cuda12-1.27.0.zip"
+      },
+      "gpu_cuda13": {
+        "sha256": "d3e0d908bc9b59dcb59b8f453493f173c087dda105d8c110df0588d22d7c8b3e",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.27.0/onnxruntime-win-x64-gpu_cuda13-1.27.0.zip"
+      }
+    }
+  },
+  "1.27.1": {
+    "linux-aarch64": {
+      "cpu": {
+        "sha256": "33c67e33d1e25b816878366ea276589a024f71f000e7ff955c4b33224d639edd",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.27.1/onnxruntime-linux-aarch64-1.27.1.tgz"
+      }
+    },
+    "linux-x64": {
+      "cpu": {
+        "sha256": "25b1ef1fea1acd210d63f8f24dc870ad6e077795ce1f54876252c6d3803c15af",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.27.1/onnxruntime-linux-x64-1.27.1.tgz"
+      },
+      "gpu_cuda12": {
+        "sha256": "08b568bd69500c36606aff7c3896ee4fa7d3531719f6b00f43e6a34db41dc4bf",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.27.1/onnxruntime-linux-x64-gpu_cuda12-1.27.1.tgz"
+      },
+      "gpu_cuda13": {
+        "sha256": "33ef9d3136914455fc5232acff80703245b464c7cb5b1666edbdf98d0caf257c",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.27.1/onnxruntime-linux-x64-gpu_cuda13-1.27.1.tgz"
+      }
+    },
+    "osx-arm64": {
+      "cpu": {
+        "sha256": "e42b77a7281cc6e55141bf44fcfbac2c782b823a491bbb6ac33c781dd991f8a6",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.27.1/onnxruntime-osx-arm64-1.27.1.tgz"
+      }
+    },
+    "win-arm64": {
+      "cpu": {
+        "sha256": "6e22c2061ba6400b42a59663d700c8694e4e8fe654cf452c4700c24237407ae1",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.27.1/onnxruntime-win-arm64-1.27.1.zip"
+      }
+    },
+    "win-arm64x": {
+      "cpu": {
+        "sha256": "36cd142edb9c7e28a74704a8b6a6a18a3f9609270d29d5b3185c61a1f9b22bef",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.27.1/onnxruntime-win-arm64x-1.27.1.zip"
+      }
+    },
+    "win-x64": {
+      "cpu": {
+        "sha256": "2e00414a63fdef0914cd5a5ede6c707844878e0c08e1b6693842f0451b2df2a1",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.27.1/onnxruntime-win-x64-1.27.1.zip"
+      },
+      "gpu_cuda12": {
+        "sha256": "78d4de5ab262f79ac5dd59f08ff0d049b1cea605497f375f8df5ba1a52f26111",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.27.1/onnxruntime-win-x64-gpu_cuda12-1.27.1.zip"
+      },
+      "gpu_cuda13": {
+        "sha256": "1a88828fb1ca78c9920637acf0f8d8ce40a854bef874128c55193e3d1a2b9ef8",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.27.1/onnxruntime-win-x64-gpu_cuda13-1.27.1.zip"
+      }
+    }
+  },
+  "1.28.0": {
+    "linux-aarch64": {
+      "cpu": {
+        "sha256": "e15ff8b5d85afe6c144d97c6fd432254bf76a219daaf17658087d6ecb3e8f0bb",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.28.0/onnxruntime-linux-aarch64-1.28.0.tgz"
+      }
+    },
+    "linux-x64": {
+      "cpu": {
+        "sha256": "a3e1b79d7bb1bf09696ce675f49e4064e6c81f6202b8225624fff0e93f8d6407",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.28.0/onnxruntime-linux-x64-1.28.0.tgz"
+      },
+      "gpu_cuda12": {
+        "sha256": "ea6bd2b65d7dfabbeb92c4af5dd8f12e5aed8601e544ad378d2f872275438b1a",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.28.0/onnxruntime-linux-x64-gpu_cuda12-1.28.0.tgz"
+      },
+      "gpu_cuda13": {
+        "sha256": "84d28f27589090b280d4312743efd3d450cd4ac7d1e1d75e7d9076d9637bf9de",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.28.0/onnxruntime-linux-x64-gpu_cuda13-1.28.0.tgz"
+      }
+    },
+    "osx-arm64": {
+      "cpu": {
+        "sha256": "1268b359718099bde2cedb55787f182a130067bc4f31e8c88478c445b850d3d8",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.28.0/onnxruntime-osx-arm64-1.28.0.tgz"
+      }
+    },
+    "win-arm64": {
+      "cpu": {
+        "sha256": "cbe4547463ece092b505c3581376ed5896d22b5429f39d5e645e425ecdd369ad",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.28.0/onnxruntime-win-arm64-1.28.0.zip"
+      }
+    },
+    "win-arm64x": {
+      "cpu": {
+        "sha256": "c86ef5287c3a112fefd4c13dca48960e0bdd69beb057db6177a3e2c67c2be708",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.28.0/onnxruntime-win-arm64x-1.28.0.zip"
+      }
+    },
+    "win-x64": {
+      "cpu": {
+        "sha256": "abef733dacbe2f571547a7150b479b5cb9cc0df22f96c24983a42cadb1b4f8bc",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.28.0/onnxruntime-win-x64-1.28.0.zip"
+      },
+      "gpu_cuda12": {
+        "sha256": "6b7bf16d6d30180db7f386fb179aa4e4f1313f0924531a2879b7b090b56518c1",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.28.0/onnxruntime-win-x64-gpu_cuda12-1.28.0.zip"
+      },
+      "gpu_cuda13": {
+        "sha256": "137f0822a4923b1d84d3e09496e0792ebbb221eb3a61a0657f71a12ab68ab1e2",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.28.0/onnxruntime-win-x64-gpu_cuda13-1.28.0.zip"
+      }
+    }
+  },
+  "1.28.1": {
+    "linux-aarch64": {
+      "cpu": {
+        "sha256": "53bab9a5c6ae198b7be75663b780c64caa388d30257fac458c71fbff0a82e98e",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.28.1/onnxruntime-linux-aarch64-1.28.1.tgz"
+      }
+    },
+    "linux-x64": {
+      "cpu": {
+        "sha256": "2529aef968d0ad0603365054bc46ebefa7f0fe3bc12f28c5f729c99ddffe2a81",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.28.1/onnxruntime-linux-x64-1.28.1.tgz"
+      },
+      "gpu_cuda12": {
+        "sha256": "18bd63f3bc4a8685a4a2dc837b9691bea3f962d6322a94410827cf2b8dbab2fa",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.28.1/onnxruntime-linux-x64-gpu_cuda12-1.28.1.tgz"
+      },
+      "gpu_cuda13": {
+        "sha256": "9ed39480d57f2d39e84a8b50d243c9a063a786b454195bb08eeac2dcbdfb9a01",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.28.1/onnxruntime-linux-x64-gpu_cuda13-1.28.1.tgz"
+      }
+    },
+    "osx-arm64": {
+      "cpu": {
+        "sha256": "18c853e5c5deba90e244e1b953a65121f23747ba2c04e6743885caa6ce1ea12f",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.28.1/onnxruntime-osx-arm64-1.28.1.tgz"
+      }
+    },
+    "win-arm64": {
+      "cpu": {
+        "sha256": "953f1187e262e60820cdafdc5cbe63930f24fe4d961182b739bf3effdf3f608f",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.28.1/onnxruntime-win-arm64-1.28.1.zip"
+      }
+    },
+    "win-arm64x": {
+      "cpu": {
+        "sha256": "615f9e22e99420d065acc567afa49b362e3f38e45cd9f16b08c060b9501c4e8b",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.28.1/onnxruntime-win-arm64x-1.28.1.zip"
+      }
+    },
+    "win-x64": {
+      "cpu": {
+        "sha256": "e46ac7652def5da0e5223372be21185ffff553e0419459f66e0114d460c38162",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.28.1/onnxruntime-win-x64-1.28.1.zip"
+      },
+      "gpu_cuda12": {
+        "sha256": "5a197988df5b91a6c8ed9e8e9fd360c7353c5ac64b211f64fe9e3734d7f632b6",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.28.1/onnxruntime-win-x64-gpu_cuda12-1.28.1.zip"
+      },
+      "gpu_cuda13": {
+        "sha256": "1b6c01b094dca0b9dfd0cbfe73e3d3ef1097b5c972e48ab48ae9ac255c772780",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.28.1/onnxruntime-win-x64-gpu_cuda13-1.28.1.zip"
+      }
+    }
+  },
+  "1.29.0": {
+    "linux-aarch64": {
+      "cpu": {
+        "sha256": "e1799098ebc054b370f6176a450f158720f297818c613e5dc99b92e2ec82346f",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.29.0/onnxruntime-linux-aarch64-1.29.0.tgz"
+      }
+    },
+    "linux-x64": {
+      "cpu": {
+        "sha256": "c3fddc4f139a045b0c4902c57410f0694f1c2fdf9b6939fbe38b1aeae7cd14ba",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.29.0/onnxruntime-linux-x64-1.29.0.tgz"
+      },
+      "gpu_cuda12": {
+        "sha256": "4ca594a0da83927befbd73fe020d7f569be151d70bb4fe9741ad405f4882e2ad",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.29.0/onnxruntime-linux-x64-gpu_cuda12-1.29.0.tgz"
+      },
+      "gpu_cuda13": {
+        "sha256": "844c64acfc43ab9423215c26493055ea229268e28283146cc644ecef0bdae048",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.29.0/onnxruntime-linux-x64-gpu_cuda13-1.29.0.tgz"
+      }
+    },
+    "osx-arm64": {
+      "cpu": {
+        "sha256": "d0706fc34f315d8c88639d0a8c81f2e09e815f282cabed3493c06a054352cf92",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.29.0/onnxruntime-osx-arm64-1.29.0.tgz"
+      }
+    },
+    "win-arm64": {
+      "cpu": {
+        "sha256": "a094a49c3ced0f9fca554647cc7566ae99d93a63a8ce6bf47975561c2de7608e",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.29.0/onnxruntime-win-arm64-1.29.0.zip"
+      }
+    },
+    "win-arm64x": {
+      "cpu": {
+        "sha256": "172684235c8ccd1495a868ef324a8744ee7749c9fe5e9fddf42f8c8b6b55f942",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.29.0/onnxruntime-win-arm64x-1.29.0.zip"
+      }
+    },
+    "win-x64": {
+      "cpu": {
+        "sha256": "c9b4b7086b529ad814f428c1bad028e20a25d7dc0699836775faace4ab5b78b2",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.29.0/onnxruntime-win-x64-1.29.0.zip"
+      },
+      "gpu_cuda12": {
+        "sha256": "3526773ba1fef5849a3e9d18558d87bbbb75b0db3ddcde4f08694a746ac3169f",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.29.0/onnxruntime-win-x64-gpu_cuda12-1.29.0.zip"
+      },
+      "gpu_cuda13": {
+        "sha256": "0d2ab3feb9ed0ae68ccbbf2013ac87ad58a3b31bc8b28c5854f2ccacecbd8d90",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.29.0/onnxruntime-win-x64-gpu_cuda13-1.29.0.zip"
+      }
+    }
+  }
+}
