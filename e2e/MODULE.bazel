@@ -1,0 +1,19 @@
+module(name = "onnxruntime_prebuilt_e2e")
+
+bazel_dep(name = "onnxruntime_prebuilt", version = "0.1.1")
+local_path_override(
+    module_name = "onnxruntime_prebuilt",
+    path = "..",
+)
+
+onnxruntime = use_extension("@onnxruntime_prebuilt//extensions:onnxruntime.bzl", "onnxruntime")
+onnxruntime.download(
+    default = True,
+    version = "1.24.4",
+)
+use_repo(
+    onnxruntime,
+    "onnxruntime",
+    "onnxruntime-1.24.4-linux-x64-cpu",
+    "onnxruntime-gpu",
+)

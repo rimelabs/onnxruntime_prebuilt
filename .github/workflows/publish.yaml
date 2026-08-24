@@ -1,0 +1,33 @@
+name: Publish to BCR
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: Tag to publish (e.g. v0.1.1)
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  id-token: write
+  attestations: write
+
+jobs:
+  publish:
+    uses: bazel-contrib/publish-to-bcr/.github/workflows/publish.yaml@v1.5.0
+    with:
+      tag_name: ${{ inputs.tag_name || github.event.release.tag_name }}
+      registry_fork: ryanli/bazel-central-registry
+      # The release workflow does not produce attestations.
+      attest: false
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+    secrets:
+      # A classic personal access token with repo scope, able to push
+      # branches to the registry fork above.
+      publish_token: ${{ secrets.BCR_PUBLISH_TOKEN }}

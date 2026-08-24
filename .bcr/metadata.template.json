@@ -1,0 +1,16 @@
+{
+    "homepage": "https://github.com/rimelabs/onnxruntime_prebuilt",
+    "maintainers": [
+        {
+            "email": "ryanli@ryanli.org",
+            "github": "ryanli",
+            "github_user_id": 148289,
+            "name": "Ryan Li"
+        }
+    ],
+    "repository": [
+        "github:rimelabs/onnxruntime_prebuilt"
+    ],
+    "versions": [],
+    "yanked_versions": {}
+}

@@ -1,0 +1,30 @@
+# Forces a build of every public target of the unversioned repositories:
+# the platform selector must resolve for the host, and the chosen archive
+# must download, extract, and glob correctly.
+filegroup(
+    name = "cpu_distribution",
+    srcs = [
+        "@onnxruntime//:include",
+        "@onnxruntime//:lib",
+        "@onnxruntime//:pkg",
+        "@onnxruntime//:shared_library",
+    ],
+)
+
+# GPU archives exist only for linux-x64 and win-x64; exercised on Linux.
+filegroup(
+    name = "gpu_distribution",
+    srcs = [
+        "@onnxruntime-gpu//:include",
+        "@onnxruntime-gpu//:lib",
+        "@onnxruntime-gpu//:pkg",
+        "@onnxruntime-gpu//:shared_library",
+    ],
+)
+
+# One explicitly versioned per-platform repository, independent of the
+# host platform.
+filegroup(
+    name = "versioned_distribution",
+    srcs = ["@onnxruntime-1.24.4-linux-x64-cpu//:lib"],
+)
