@@ -1,0 +1,46 @@
+load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
+
+package(default_visibility = ["//visibility:public"])
+
+# The shared libraries as shipped, including the SONAME symlink chain
+# (libonnxruntime.so -> libonnxruntime.so.1 -> libonnxruntime.so.<version>):
+# dynamic loading and packaging need the links, not just the real files.
+# Each archive ships exactly one platform's family, hence allow_empty.
+filegroup(
+    name = "lib",
+    srcs = glob(
+        [
+            "lib/*.dll",
+            "lib/*.dylib*",
+            "lib/*.lib",
+            "lib/*.so*",
+        ],
+        allow_empty = True,
+    ),
+)
+
+filegroup(
+    name = "include",
+    srcs = glob(["include/**"]),
+)
+
+# The main shared library by its linker name; exactly one of the patterns
+# exists per archive. For locating the file at runtime, e.g.
+# $(rootpath ...) into an ORT_DYLIB_PATH-style setting.
+filegroup(
+    name = "shared_library",
+    srcs = glob(
+        [
+            "lib/libonnxruntime.dylib",
+            "lib/libonnxruntime.so",
+            "lib/onnxruntime.dll",
+        ],
+        allow_empty = True,
+    ),
+)
+
+pkg_tar(
+    name = "pkg",
+    srcs = [":lib"],
+    package_dir = "/usr/lib",
+)
