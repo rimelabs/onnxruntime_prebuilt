@@ -8,11 +8,10 @@ bazel_dep(name = "rules_pkg", version = "1.2.0")
 
 bazel_dep(name = "rules_python", version = "1.9.2", dev_dependency = True)
 
-# Pin the ONNX Runtime version behind the unversioned @onnxruntime (CPU)
-# and @onnxruntime-gpu (newest CUDA variant) repositories. Consumers get
-# them with a bare use_repo; the root module can re-pin with its own
-# default = True tag, or request additional versions side by side.
-onnxruntime = use_extension("//extensions:onnxruntime.bzl", "onnxruntime")
+# Instantiate one version so all three repository layers are exercised
+# by builds in this workspace; consumers pin their own version (and
+# default) through the same extension.
+onnxruntime = use_extension("//extensions:onnxruntime.bzl", "onnxruntime", dev_dependency = True)
 onnxruntime.download(
     default = True,
     version = "1.24.4",
@@ -21,7 +20,6 @@ use_repo(
     onnxruntime,
     "onnxruntime",
     "onnxruntime-gpu",
-    # Exercised by builds in this workspace to cover the versioned layers.
     "onnxruntime-1.24.4-cpu",
     "onnxruntime-1.24.4-linux-x64-gpu_cuda13",
 )

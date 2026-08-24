@@ -16,9 +16,9 @@ _download = tag_class(
         "default": attr.bool(
             default = False,
             doc = """Expose this version through the unversioned @onnxruntime
-(CPU) and @onnxruntime-gpu (newest CUDA variant) repositories.
-onnxruntime_prebuilt's own MODULE.bazel pins one default; the first default
-tag in breadth-first module order wins, so the root module can re-pin.""",
+(CPU) and @onnxruntime-gpu (newest CUDA variant) repositories. The first
+default tag in breadth-first module order wins, so the root module's pin
+beats any dependency's.""",
         ),
         "version": attr.string(
             doc = "ONNX Runtime release version, e.g. \"1.24.4\".",

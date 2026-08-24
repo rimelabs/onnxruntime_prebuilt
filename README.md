@@ -11,22 +11,20 @@ external repositories — both the CPU-only `onnxruntime` archives and the
 bazel_dep(name = "onnxruntime_prebuilt", version = "0.1.0")
 
 onnxruntime = use_extension("@onnxruntime_prebuilt//extensions:onnxruntime.bzl", "onnxruntime")
+onnxruntime.download(
+    default = True,
+    version = "1.24.4",
+)
 use_repo(onnxruntime, "onnxruntime", "onnxruntime-gpu")
 ```
 
-`@onnxruntime` (CPU) and `@onnxruntime-gpu` (newest CUDA variant) carry the
-default ONNX Runtime version pinned in this module's MODULE.bazel and
-dispatch to the archive matching the target platform. To re-pin the default
-or use additional versions side by side, add `download` tags:
-
-```starlark
-onnxruntime.download(version = "1.29.0", default = True)  # re-pin @onnxruntime[-gpu]
-onnxruntime.download(version = "1.24.4")                  # versioned repos only
-use_repo(onnxruntime, "onnxruntime-gpu", "onnxruntime-1.24.4-linux-x64-gpu_cuda13")
-```
-
-(The first `default = True` tag in breadth-first module order wins, so a root
-module's re-pin beats this module's pin.)
+The consumer pins the ONNX Runtime version; `default = True` additionally
+exposes that version as the unversioned `@onnxruntime` (CPU) and
+`@onnxruntime-gpu` (newest CUDA variant) repositories, which dispatch to the
+archive matching the target platform. Multiple versions can be requested
+side by side with further `download` tags. (The first `default = True` tag
+in breadth-first module order wins, so a root module's pin beats any
+dependency's.)
 
 Each requested version provides two layers of repositories:
 
