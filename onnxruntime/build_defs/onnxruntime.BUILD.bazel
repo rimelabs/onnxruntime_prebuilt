@@ -5,7 +5,7 @@ package(default_visibility = ["//visibility:public"])
 # The shared libraries as shipped, including the SONAME symlink chain
 # (libonnxruntime.so -> libonnxruntime.so.1 -> libonnxruntime.so.<version>):
 # dynamic loading and packaging need the links, not just the real files.
-# Each archive ships exactly one platform's family, hence allow_empty.
+# Each repository holds exactly one platform's family, hence allow_empty.
 filegroup(
     name = "lib",
     srcs = glob(
@@ -25,7 +25,7 @@ filegroup(
 )
 
 # The main shared library by its linker name; exactly one of the patterns
-# exists per archive. For locating the file at runtime, e.g.
+# exists per repository. For locating the file at runtime, e.g.
 # $(rootpath ...) into an ORT_DYLIB_PATH-style setting.
 filegroup(
     name = "shared_library",

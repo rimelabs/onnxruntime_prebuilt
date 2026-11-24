@@ -4,10 +4,8 @@ _ONNXRUNTIME_REDIST_VERSIONS_JSON = Label("//onnxruntime:onnxruntime_redist_vers
 
 _BUILD_TEMPLATE = Label("//onnxruntime/build_defs:onnxruntime.BUILD.bazel")
 
-# Platforms whose archives a selector repository can pick with a
-# config_setting on target constraints. osx-universal2 and win-arm64x
-# overlap the per-architecture archives (no distinct constraint set), so
-# they are reachable only as explicit per-platform repositories.
+# Platforms a selector repository can pick with a config_setting on target
+# constraints.
 _SELECTOR_PLATFORM_CONSTRAINTS = {
     "linux-aarch64": ["@platforms//os:linux", "@platforms//cpu:aarch64"],
     "linux-x64": ["@platforms//os:linux", "@platforms//cpu:x86_64"],
@@ -29,7 +27,7 @@ def default_gpu_flavor(flavors):
 
     The plain "gpu" flavor (CUDA 12, renamed gpu_cuda12 in 1.27) ranks below
     the explicitly suffixed ones. Returns None if the version has no GPU
-    archives at all.
+    distributions at all.
     """
     best = None
     best_rank = -1
@@ -43,7 +41,7 @@ def default_gpu_flavor(flavors):
     return best
 
 def get_onnxruntime_redists(mctx, version):
-    """Returns the distribution archives the catalog holds for a version.
+    """Returns the distributions the catalog holds for a version.
 
     Args:
         mctx: the module extension context, used to read the catalog.
@@ -51,8 +49,8 @@ def get_onnxruntime_redists(mctx, version):
 
     Returns:
         A dict mapping platforms (e.g. "linux-x64") to dicts mapping flavors
-        ("cpu", "gpu", "gpu_cuda12", "gpu_cuda13") to {"url": ..., "sha256": ...}
-        download descriptors.
+        ("cpu", "gpu", "gpu_cuda12", "gpu_cuda13") to the keyword arguments
+        of onnxruntime_redist_repository other than version.
     """
     catalog = json.decode(mctx.read(_ONNXRUNTIME_REDIST_VERSIONS_JSON))
     if version not in catalog:
@@ -63,39 +61,86 @@ def get_onnxruntime_redists(mctx, version):
         )
     return catalog[version]
 
+def _reproducible(rctx, reproducible):
+    """Lets Bazel 8.3 and later share the repository's contents across
+    workspaces when it is reproducible; earlier versions have no
+    repo_metadata."""
+    if hasattr(rctx, "repo_metadata"):
+        return rctx.repo_metadata(reproducible = reproducible)
+    return None
+
+# For each platform's main library: the versioned file name its install name
+# gives, and the links the linker and the dynamic loader find it by.
+_LIBRARY_NAMES = {
+    "libonnxruntime.dylib": lambda version: (
+        "libonnxruntime.{}.dylib".format(version),
+        ["libonnxruntime.dylib"],
+    ),
+    "libonnxruntime.so": lambda version: (
+        "libonnxruntime.so.{}".format(version),
+        ["libonnxruntime.so.1", "libonnxruntime.so"],
+    ),
+}
+
+def _relative_symlink(rctx, target, link):
+    """Links link to target, a name in the same directory; rctx.symlink
+    makes absolute links, which break once Bazel moves the repository."""
+    result = rctx.execute(["ln", "-s", target, link])
+    if result.return_code != 0:
+        fail("cannot link {} to {}: {}".format(link, target, result.stderr))
+
 def _onnxruntime_redist_repository_impl(rctx):
     rctx.download_and_extract(
-        output = "_archive",
-        sha256 = rctx.attr.sha256,
+        output = "_package",
+        integrity = rctx.attr.integrity,
+        type = "zip",
         url = rctx.attr.url,
     )
+    rctx.rename("_package/" + rctx.attr.include_directory, "include")
+    rctx.rename("_package/" + rctx.attr.library_directory, "lib")
+    for notice in ["LICENSE", "ThirdPartyNotices.txt"]:
+        if rctx.path("_package/" + notice).exists:
+            rctx.rename("_package/" + notice, notice)
+    rctx.delete("_package")
 
-    # Release archives wrap their contents in a single top-level directory
-    # whose name is not always derivable from the archive name (the
-    # *-gpu_cuda13 archives extract to a plain *-gpu-* directory), so link
-    # the contents of whatever directory is there instead of stripping a
-    # recorded prefix.
-    entries = rctx.path("_archive").readdir()
-    if len(entries) != 1 or not entries[0].is_dir:
-        fail("expected a single top-level directory in {}, found {}".format(
-            rctx.attr.url,
-            entries,
-        ))
-    for child in entries[0].readdir():
-        rctx.symlink(child, child.basename)
+    for name, names in _LIBRARY_NAMES.items():
+        if rctx.path("lib/" + name).exists:
+            versioned, links = names(rctx.attr.version)
+            rctx.rename("lib/" + name, "lib/" + versioned)
+            target = versioned
+            for link in links:
+                _relative_symlink(rctx, target, "lib/" + link)
+                target = link
 
     rctx.template("BUILD.bazel", rctx.attr.build_template)
+    return _reproducible(rctx, True)
 
 onnxruntime_redist_repository = repository_rule(
-    doc = "Downloads and exposes one prebuilt ONNX Runtime distribution archive.",
+    doc = """Downloads one platform's libraries and headers from a prebuilt
+ONNX Runtime NuGet package, laid out as lib/ and include/.""",
     implementation = _onnxruntime_redist_repository_impl,
     attrs = {
         "build_template": attr.label(
             allow_single_file = True,
             default = _BUILD_TEMPLATE,
         ),
-        "sha256": attr.string(mandatory = True),
+        "include_directory": attr.string(
+            doc = "The package directory holding the headers, e.g. \"build/native/include\".",
+            mandatory = True,
+        ),
+        "integrity": attr.string(
+            doc = "The package's Subresource Integrity, e.g. \"sha512-...\".",
+            mandatory = True,
+        ),
+        "library_directory": attr.string(
+            doc = "The package directory holding the platform's libraries, e.g. \"runtimes/linux-x64/native\".",
+            mandatory = True,
+        ),
         "url": attr.string(mandatory = True),
+        "version": attr.string(
+            doc = "The ONNX Runtime version, e.g. \"1.24.4\", which names the versioned library.",
+            mandatory = True,
+        ),
     },
 )
 
@@ -113,7 +158,7 @@ def selectable_platforms(platforms):
 def _onnxruntime_selector_repository_impl(rctx):
     platforms = sorted(rctx.attr.platform_repos)
     lines = [
-        "# Dispatches to the archive repository matching the target platform.",
+        "# Dispatches to the platform repository matching the target platform.",
         "",
         'package(default_visibility = ["//visibility:public"])',
     ]
@@ -154,15 +199,16 @@ def _onnxruntime_selector_repository_impl(rctx):
             ")",
         ]
     rctx.file("BUILD.bazel", "\n".join(lines) + "\n")
+    return _reproducible(rctx, True)
 
 onnxruntime_selector_repository = repository_rule(
     doc = """Exposes one ONNX Runtime distribution flavor of one version,
-dispatching to the per-platform archive repository matching the target
+dispatching to the per-platform repository matching the target
 platform via constraint-based config_settings.""",
     implementation = _onnxruntime_selector_repository_impl,
     attrs = {
         "platform_repos": attr.string_dict(
-            doc = "Maps platform (e.g. \"linux-x64\") to the archive repository name.",
+            doc = "Maps platform (e.g. \"linux-x64\") to the platform repository name.",
             mandatory = True,
         ),
     },

@@ -1,6 +1,6 @@
 module(name = "onnxruntime_prebuilt_e2e")
 
-bazel_dep(name = "onnxruntime_prebuilt", version = "0.1.1")
+bazel_dep(name = "onnxruntime_prebuilt", version = "0.2.0")
 local_path_override(
     module_name = "onnxruntime_prebuilt",
     path = "..",
